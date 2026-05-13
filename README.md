@@ -168,4 +168,4 @@ This project was built to practice:
 ## Author
 
 **Abdulrahman Ramadan**  
-C++ Developer – OOP Banking System (Refactored Version from Procedural to Modular Architecture)
+C++ Student Developer – OOP Banking System Project
