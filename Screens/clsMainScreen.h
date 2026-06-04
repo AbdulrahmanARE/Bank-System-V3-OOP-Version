@@ -9,6 +9,7 @@
 #include "clsTransactionsScreen.h"
 #include "clsFindClientScreen.h"
 #include "clsManageUsersScreen.h"
+#include "clsLoginRegisterListScreen.h"
 #include "Global.h"
 #include <iomanip>
 
@@ -22,13 +23,13 @@ private:
     enum enMainMenueOptions {
         eListClients = 1, eAddNewClient = 2, eDeleteClient = 3,
         eUpdateClient = 4, eFindClient = 5, eShowTransactionsMenue = 6,
-        eManageUsers = 7, eExit = 8
+        eManageUsers = 7, eLoginRegister = 8 , eExit = 9
     };
 
     static short _ReadMainMenueOption()
     {
-        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 8]? ";
-        short Choice = clsInputValidatidate::ReadShortNumberBetween(1, 8, "Enter Number between 1 to 8? ");
+        cout << setw(37) << left << "" << "Choose what do you want to do? [1 to 9]? ";
+        short Choice = clsInputValidatidate::ReadShortNumberBetween(1, 9, "Enter Number between 1 to 9? ");
         return Choice;
     }
 
@@ -79,6 +80,11 @@ private:
     static void _ShowManageUsersMenue()
     {
         clsManageUsersScreen::ShowManageUsersMenue();
+    }
+
+    static void _ShoweLoginRegisterScreen()
+    {
+        clsLoginRegisterListScreen::ShowLoginRegisterList();
     }
 
     static void _Logout()
@@ -133,6 +139,12 @@ private:
             _GoBackToMainMenue();
             break;
 
+        case enMainMenueOptions::eLoginRegister:
+            system("cls");
+            _ShoweLoginRegisterScreen();
+            _GoBackToMainMenue();
+            break;
+
         case enMainMenueOptions::eExit:
             system("cls");
             _Logout();
@@ -162,7 +174,8 @@ public:
         cout << left << setw(37) << "" << "\t[5] Find Client.\n";
         cout << left << setw(37) << "" << "\t[6] Transactions.\n";
         cout << left << setw(37) << "" << "\t[7] Manage Users.\n";
-        cout << left << setw(37) << "" << "\t[8] Logout.\n";
+        cout << left << setw(37) << "" << "\t[8] Login Register.\n";
+        cout << left << setw(37) << "" << "\t[9] Logout.\n";
         cout << left << setw(37) << "" << "===========================================\n";
 
         _PerfromMainMenueOption((enMainMenueOptions)_ReadMainMenueOption());
