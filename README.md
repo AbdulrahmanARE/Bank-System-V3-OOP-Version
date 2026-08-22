@@ -116,10 +116,12 @@ FirstName#//#LastName#//#Email#//#Phone#//#AccountNumber#//#PinCode#//#AccountBa
 
 ### Users.txt
 FirstName#//#LastName#//#Email#//#Phone#//#UserName#//#Password#//#Permissions
+
 *(Passwords are stored in encrypted format)*
 
 ### LoginRegister.txt (New)
 Date#//#UserName#//#Password#//#Permissions
+
 *(Passwords are stored in encrypted format)*
 
 ### TransferLog.txt (New)
